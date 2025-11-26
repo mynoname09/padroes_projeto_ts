@@ -15,11 +15,10 @@ class Singleton {
 
 // Uso do Singleton
 export function exemploUsoSingleton() {
-  console.log("Obtendo a primeira instância do Singleton...");
+  console.log('Obtendo a primeira instância do Singleton...');
   const singleton1 = Singleton.instance;
-  console.log("Obtendo a segunda instância do Singleton...");
+  console.log('Obtendo a segunda instância do Singleton...');
   const singleton2 = Singleton.instance;
 
   console.log(`Instancia1 é igual instancia2? ${singleton1 == singleton2}`);
 }
-

@@ -17,7 +17,7 @@ const SingleTonFunction = (function () {
         return users;
       },
       showUsers() {
-        console.log("Usuários cadastrados:", users);
+        console.log('Usuários cadastrados:', users);
       },
     };
   }
@@ -40,17 +40,16 @@ type SingleTonFunctionType = {
 
 // Uso do Singleton Function
 export function exemploUsoSingleton() {
-  console.log("Usando IIFE para singleton");
-  console.log("Obtendo a primeira instância do Singleton Function...");
+  console.log('Usando IIFE para singleton');
+  console.log('Obtendo a primeira instância do Singleton Function...');
   const singleton1 = SingleTonFunction.getInstance();
-  console.log("Obtendo a segunda instância do Singleton Function...");
+  console.log('Obtendo a segunda instância do Singleton Function...');
   const singleton2 = SingleTonFunction.getInstance();
 
-  singleton1.addUser({ id: 1, name: "Alice" });
-  singleton2.addUser({ id: 2, name: "Bob" });
+  singleton1.addUser({ id: 1, name: 'Alice' });
+  singleton2.addUser({ id: 2, name: 'Bob' });
 
   singleton1.showUsers();
 
   console.log(`Instancia1 é igual instancia2? ${singleton1 === singleton2}`);
 }
-
