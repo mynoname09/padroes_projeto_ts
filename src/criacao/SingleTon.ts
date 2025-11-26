@@ -1,25 +1,48 @@
 class Singleton {
-  private static instance: Singleton;
+  private static _instance: Singleton;
 
   private constructor() {
     // Construtor privado para evitar instanciação externa
   }
 
-  public static getInstance(): Singleton {
-    if (!Singleton.instance) {
-      Singleton.instance = new Singleton();
+  public static get instance(): Singleton {
+    if (!Singleton._instance) {
+      Singleton._instance = new Singleton();
     }
-    return Singleton.instance;
+    return Singleton._instance;
   }
 }
 
 // Uso do Singleton
 export function exemploUsoSingleton() {
   console.log("Obtendo a primeira instância do Singleton...");
-  const singleton1 = Singleton.getInstance();
+  const singleton1 = Singleton.instance;
   console.log("Obtendo a segunda instância do Singleton...");
-  const singleton2 = Singleton.getInstance();
+  const singleton2 = Singleton.instance;
 
   console.log(`Instancia1 é igual instancia2? ${singleton1 == singleton2}`);
 }
+
+// Exemplo de armazenamento de dados
+
+interface User {
+  id: number;
+  name: string;
+}
+
+const users: User[] = [];
+
+// module como singleton
+// Não precisa instanciar, o módulo é um singleton por natureza
+export const SingleTonModule = {
+  addUser(user: User) {
+    users.push(user);
+  },
+  getUsers(): User[] {
+    return users;
+  },
+  showUsers() {
+    console.log("Usuários cadastrados:", users);
+  },
+};
 
